@@ -1,0 +1,166 @@
+@import url('https://.googleapis.com/css?family=SpaceGrotesk:wght@30..700&display=swap');
+
+
+:root {
+  --vdg-blue: hsl(217, 19 35%);
+  --ds-blue: hsl(214, 17%, 51%);
+  --gb: hsl(212, 23%, 69%);
+  --lg-gb: hsl(210, 46%, 95%);
+  --main-font: "Space Grotesk", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--vdg-blue);
+}
+
+html , body {
+    width: 100%;
+    height: auto;
+    background-color: var(--lg-gb);
+
+}
+
+body {
+    padding: 20px 0;
+    display: flex;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    min-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    width: 25.16rem;
+    border-radius: 10px;
+}
+
+.card-image{
+    overflow: hidden;
+    height: 15.4rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-main {
+    padding: 42px 32px 0;
+
+}
+
+.card-content > p {
+    font-size: 1.1rem;
+    padding: 24px 0;
+    line-height: 1.5rem;
+
+}
+
+.card-user {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+
+}
+
+.user > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+
+.user-info > p:first-child {
+    font-weight: 700;
+
+}
+
+.user-info > p:last-child {
+    font-weight: 100;
+}
+
+.icon-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    background: var(--lg-gb);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-share:hover .i-share{
+    fill: var(--lg-gb);
+animation: shareAnimation .2 linear;}
+
+
+@keyframes shareAnimation {
+    from{}
+    to {
+        transform: translateX(1px);
+    }
+}
+
+.icon-share:hover{
+    background: var(--ds-blue);
+    transition: background 100ms linear;
+}
+
+.ico-network {
+    position: absolute;
+    top: 5px;
+    left: -32px;
+    width: 25rem;
+    height: 75px;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    background: var(--ds-blue);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.ico-network p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--gb);
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.ico-network a svg {
+    font-size: 1.7rem;
+    margin: auto 0.7rem;
+}
