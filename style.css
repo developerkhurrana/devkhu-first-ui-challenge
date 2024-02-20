@@ -2,118 +2,117 @@
 
 
 :root {
-  --vdg-blue: hsl(217, 19 35%);
+  --vdg-blue : hsl(0, 0%, 13%);
   --ds-blue: hsl(214, 17%, 51%);
   --gb: hsl(212, 23%, 69%);
   --lg-gb: hsl(210, 46%, 95%);
   --main-font: "Space Grotesk", sans-serif;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+  *{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: var(--main-font);
     font-weight: 500;
     font-size: 13px;
     color: var(--vdg-blue);
-}
+  }
 
-html , body {
+  html, body {
     width: 100%;
     height: auto;
-    background-color: var(--lg-gb);
+    background: var(--lg-gb);
+  }
 
-}
 
-body {
+  body {
     padding: 20px 0;
     display: flex;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-h2 {
+  h2 {
     font-size: 20px;
     font-weight: 700;
-}
+  }
 
-img {
+  img {
     height: 100%;
     width: 100%;
-}
+  }
 
-.main {
+  .main {
     width: 100%;
-    min-width: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-content: center;
-
-}
-
-.card {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+  }
+
+  .card {
+    background: white;
     width: 25.16rem;
     border-radius: 10px;
-}
+   
+  }
 
-.card-image{
+  .card-image {
     overflow: hidden;
-    height: 15.4rem;
-    border-radius: 10px 10px 0 0;
-}
+    height: 15.3rem;
+    border-radius: 10px 0 0 10px;
+  }
 
-.card-main {
+  .card-main {
+    background-color: white;
     padding: 42px 32px 0;
+    border-radius: 10px;
+  }
 
-}
-
-.card-content > p {
+  .card-content {
     font-size: 1.1rem;
     padding: 24px 0;
     line-height: 1.5rem;
+  }
 
-}
-
-.card-user {
+  .card-user {
     position: relative;
     width: 100%;
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
 
-.user {
+
+  }
+
+  .user {
     display: flex;
     align-items: center;
 
-}
+  }
 
-.user > img {
+   .user > img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
-
 }
 
-.user-info > p:first-child {
+.user-info > p:first-child{
     font-weight: 700;
-
 }
 
-.user-info > p:last-child {
+.user-info > p:last-child{
     font-weight: 100;
 }
 
 .icon-share {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    position: relative;
     z-index: 5;
-    background: var(--lg-gb);
+    background: var(--gb);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -121,19 +120,19 @@ img {
 
 .icon-share:hover .i-share{
     fill: var(--lg-gb);
-animation: shareAnimation .2 linear;}
-
+    animation: shareAnimation .2x linear;
+    
+}
 
 @keyframes shareAnimation {
-    from{}
+    from {}
     to {
         transform: translateX(1px);
     }
 }
 
-.icon-share:hover{
-    background: var(--ds-blue);
-    transition: background 100ms linear;
+.icon-share:hover {
+    background: var(--vdg-blue);
 }
 
 .ico-network {
@@ -144,11 +143,12 @@ animation: shareAnimation .2 linear;}
     height: 75px;
     padding: 2rem;
     border-radius: 0 0 10px 10px;
-    background: var(--ds-blue);
+    background: var(--vdg-blue);
     display: flex;
+    visibility: hidden;
     align-items: center;
     z-index: 1;
-    visibility: hidden;
+
 }
 
 .ico-network p {
@@ -163,4 +163,44 @@ animation: shareAnimation .2 linear;}
 .ico-network a svg {
     font-size: 1.7rem;
     margin: auto 0.7rem;
+
+}
+
+@media(min-width: 1024px) {
+    .card{
+        width: 730px;
+        height: 280px;
+        display: flex;
+        background: whitesmoke;
+    }
+
+    .card-image{
+        overflow: hidden;
+        flex: 1 0 285px;
+        border-radius: 10px 0 0 10px;
+        height: 100%;
+    }
+
+    .card-image > img {
+        width: 120%;
+    }
+
+    .ico-network{
+        width: 22rem;
+        height: 50px;
+        top: -60px;
+        left: 59%;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .ico-network::after {
+        content: '';
+        position: absolute;
+        top: 52px;
+        display: block;
+        border-width: 15px;
+        border-style: solid;
+        border-color: var(--vdg-blue);
+    }
 }
